@@ -7,95 +7,46 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  background: #d4e4ff;
+h1 {
+    margin-bottom: 50px;
 }
 
-.container{
-    background-color: #ffffff;
-    width: 40%;
-    min-width: 500px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    padding: 20px 0;
-    padding-bottom: 50px;
-    border-radius: 10px;
-}
-
-.timerDisplay{
-    position: relative;
-    width: 92%;
-    background: #ffffff;
-    left: 4%;
-    padding: 40px 0;
-    font-family: 'Roboto mono',monospace;
-    color: #0381bb;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0,139,253,0.25);
-}
-
-.buttons{
-    width: 90%;
-    margin: 60px auto 0 auto;
-    display: flex;
-    justify-content: space-around;
-}
-.buttons button{
-    width: 120px;
-    height: 45px;
-    background-color: #bdce20;
-    color: #ffffff;
-    border: none;
-    font-family: 'Poppins',sans-serif;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-}
-
-.buttons button:nth-last-child(2){
-    background-color: #2d8b2a;
-  }
-  .buttons button:nth-last-child(1){
-    background-color: #b32f20;
-  }
-
-
-  body {
-    background: #202020;
-    color: white;
-}
-button {
+.bubble {
     width: 100px;
-    height: 30px;
-    border: 3px soldi white;
-    border-radius: 50px;
-    background: #202020;
-    color: white;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 30px;
+    align-items: center;
+    background-color: lightblue;
+    margin-bottom: 5px;
+    border-radius: 100px;
+    margin-left: 20px;
     cursor: pointer;
-    outline: none;
+    transition: all 0.5s ease-in-out;
 }
 
-#stopwatch {
-    font-size: 100px;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -55%);
+.bubble:hover {
+    width: 500px;
 }
-#buttons {
-    position: absolute;
-    top: 55%;
-    left: 48.4%;
-    transform: translate(-51.6%, -45%);
+
+.bubble img {
+    width: 40px;
+    height: auto;
+    margin-right: 30px;
 }
-#buttons li {
-    display: inline;
-    padding-left: 10px;
+
+.bubble.play .pause-btn {
+    display: none;
+}
+
+.bubble.pause .play-btn {
+    display: none;
+}
+
+.project-name {
+    font-size: 25px;
+    white-space: nowrap;
+    font-weight: bold;
 }
