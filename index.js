@@ -41,3 +41,30 @@ function toggleButton(ev){
 // one dict for start time, one dict with end time, one dict where I collect all the time - key is always project name
 // save the times in a dictionary and add new times to it
 // at hover, calculate time difference and show next to project name
+
+
+//PART 3: Add time difference to project name in HTML
+//PART 4: how to add project names/bubbles dynamically? 
+//Step 1: dynamically add the bubble div to the main container div based on an eventlistener (plus button click)
+//Step 2: make a plus button and add an event listener - ffunction is add the bubble div
+//Step 3: dynamically add the project name with input when plus button is clicked - make sure that the project is an ID not a name, so I can change names later
+//append child element to main container
+
+document.getElementById("add-button").addEventListener('click', addProject);
+
+function addProject() {
+    let addinput = prompt("Please enter your project name", "HP");
+    if (addinput != null) {
+        const bubbletemplate = document.createElement("div");
+        bubbletemplate.classList.add('bubble', 'play');
+        bubbletemplate.innerHTML = `<img class="play-btn" src="./images/play.png"><img class="pause-btn" src="./images/pause.png"><span class="project-name">${addinput}</span><button id="change-button">Change Name</button>`
+        document.getElementById("maincontainer");
+        maincontainer.appendChild(bubbletemplate);
+        //document.getElementById("demo").innerHTML =
+      //"Hello " + person + "! How are you today?";
+    }
+  }
+
+
+
+//things I need in my HTML: add button with text input, remove button, change project name button which would be in the bubbles div
