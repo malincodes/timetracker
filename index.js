@@ -74,7 +74,6 @@ function addProject() {
 // find element with id  and put eventlistener on that
 //function to remove bubbles from main container - button is within bubble
 
-  // ${removebubble.remove()}
 }
 
 

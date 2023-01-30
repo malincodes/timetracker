@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/malincodes/timetracker#readme",
   "devDependencies": {
-    "electron": "^18.1.0"
+    "electron": "^22.1.0"
   }
 }
