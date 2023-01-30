@@ -50,21 +50,34 @@ function toggleButton(ev){
 //Step 3: dynamically add the project name with input when plus button is clicked - make sure that the project is an ID not a name, so I can change names later
 //append child element to main container
 
+//function to add new bubbles to main container
 document.getElementById("add-button").addEventListener('click', addProject);
-
+let counter = 0;
 function addProject() {
-    let addinput = prompt("Please enter your project name", "HP");
+    let addinput = prompt("Please enter your project name", "Your Project Name Here");
     if (addinput != null) {
         const bubbletemplate = document.createElement("div");
+        bubbletemplate.id = "ID" + ++counter;
         bubbletemplate.classList.add('bubble', 'play');
-        bubbletemplate.innerHTML = `<img class="play-btn" src="./images/play.png"><img class="pause-btn" src="./images/pause.png"><span class="project-name">${addinput}</span><button id="change-button">Change Name</button>`
+        bubbletemplate.innerHTML = `<img class="play-btn" src="./images/play.png"><img class="pause-btn" src="./images/pause.png"><span class="project-name">${addinput}</span><button class="change-button">Change Name</button><button class="remove-button">Remove</button>`
         document.getElementById("maincontainer");
         maincontainer.appendChild(bubbletemplate);
-        //document.getElementById("demo").innerHTML =
-      //"Hello " + person + "! How are you today?";
+        //remove bubble function
+        document.querySelector("#ID" + counter + " .remove-button").addEventListener('click',removeProject);
+        function removeProject(ev1) {
+            let removeBubble = document.getElementById("ID" + counter);
+            const currentRemoveButton = ev1.currentTarget;
+            currentRemoveButton.parentElement.remove();
+        }
     }
-  }
 
+// find element with id  and put eventlistener on that
+//function to remove bubbles from main container - button is within bubble
+
+  // ${removebubble.remove()}
+}
 
 
 //things I need in my HTML: add button with text input, remove button, change project name button which would be in the bubbles div
+//remove button
+//put in electron
