@@ -1,11 +1,11 @@
 // PART 1: 
 // Step 1: get all the bubbles - refer to HTML elements in this doc
-const bubbles = document.querySelectorAll('.bubble');
+//const bubbles = document.querySelectorAll('.bubble');
 
 // Step 2: for each bubble, attach an on-click event listener that executes a function (loop throouogh it)
-bubbles.forEach(function(bubble) {
-    bubble.addEventListener('click', toggleButton)
-});
+// bubbles.forEach(function(bubble) {
+    //bubble.addEventListener('click', toggleButton)
+// });
 
 // Step 3: write the function that when you click the bubble, it removes the play class and adds a pause class, or vice versa
 const startstamp = {};
@@ -54,21 +54,22 @@ function toggleButton(ev){
 document.getElementById("add-button").addEventListener('click', addProject);
 let counter = 0;
 function addProject() {
-    let addinput = prompt("Please enter your project name", "Your Project Name Here");
+    let addinput = document.getElementById("add-topic").value;//prompt("Please enter your project name", "Your Project Name Here");
     if (addinput != null) {
         const bubbletemplate = document.createElement("div");
         bubbletemplate.id = "ID" + ++counter;
         bubbletemplate.classList.add('bubble', 'play');
         bubbletemplate.innerHTML = `<img class="play-btn" src="./images/play.png"><img class="pause-btn" src="./images/pause.png"><span class="project-name">${addinput}</span><button class="change-button">Change Name</button><button class="remove-button">Remove</button>`
         document.getElementById("maincontainer");
-        maincontainer.appendChild(bubbletemplate);
+        const bubble = maincontainer.appendChild(bubbletemplate);
         //remove bubble function
         document.querySelector("#ID" + counter + " .remove-button").addEventListener('click',removeProject);
         function removeProject(ev1) {
-            let removeBubble = document.getElementById("ID" + counter);
             const currentRemoveButton = ev1.currentTarget;
             currentRemoveButton.parentElement.remove();
         }
+        //listen for click in newly created bubble
+        bubble.addEventListener('click', toggleButton);
     }
 
 // find element with id  and put eventlistener on that
@@ -80,3 +81,5 @@ function addProject() {
 //things I need in my HTML: add button with text input, remove button, change project name button which would be in the bubbles div
 //remove button
 //put in electron
+// event listener enter statt click - mit click!
+
